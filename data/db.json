@@ -15,7 +15,161 @@
       "createdAt": "2026-06-14T08:00:00.000Z",
       "updatedAt": "2026-06-14T08:00:00.000Z",
       "history": [
-        { "at": "2026-06-14T08:00:00.000Z", "action": "创建", "note": "样点建档" }
+        {
+          "at": "2026-06-14T08:00:00.000Z",
+          "action": "创建",
+          "note": "样点建档"
+        }
+      ]
+    }
+  ],
+  "devices": [
+    {
+      "id": "device-1",
+      "code": "KQ-01",
+      "name": "多参数微环境巡测仪",
+      "type": "多参数",
+      "tempMin": -10,
+      "tempMax": 50,
+      "humMin": 0,
+      "humMax": 100,
+      "co2Min": 0,
+      "co2Max": 5000,
+      "status": "借出",
+      "holder": "沈宁",
+      "assignedAt": "2026-06-18T08:30:00.000Z",
+      "note": "主力巡测设备",
+      "createdAt": "2026-05-20T08:00:00.000Z",
+      "updatedAt": "2026-06-18T08:30:00.000Z",
+      "history": [
+        {
+          "at": "2026-06-18T08:30:00.000Z",
+          "action": "分配领用",
+          "note": "领用人：沈宁"
+        },
+        {
+          "at": "2026-05-20T08:00:00.000Z",
+          "action": "创建",
+          "note": "设备建档"
+        }
+      ]
+    },
+    {
+      "id": "device-2",
+      "code": "KQ-02",
+      "name": "多参数微环境巡测仪",
+      "type": "多参数",
+      "tempMin": -10,
+      "tempMax": 50,
+      "humMin": 0,
+      "humMax": 100,
+      "co2Min": 0,
+      "co2Max": 5000,
+      "status": "在库",
+      "holder": "",
+      "note": "备用设备，校准已过期待送检",
+      "createdAt": "2026-05-20T08:00:00.000Z",
+      "updatedAt": "2026-05-20T08:00:00.000Z",
+      "history": [
+        {
+          "at": "2026-05-20T08:00:00.000Z",
+          "action": "创建",
+          "note": "设备建档"
+        }
+      ]
+    },
+    {
+      "id": "device-3",
+      "code": "KQ-03",
+      "name": "老式CO2巡测仪",
+      "type": "CO2",
+      "tempMin": 0,
+      "tempMax": 40,
+      "humMin": 10,
+      "humMax": 90,
+      "co2Min": 0,
+      "co2Max": 2000,
+      "status": "停用",
+      "holder": "",
+      "note": "传感器漂移，停用待修",
+      "createdAt": "2026-05-20T08:00:00.000Z",
+      "updatedAt": "2026-06-10T08:00:00.000Z",
+      "history": [
+        {
+          "at": "2026-06-10T08:00:00.000Z",
+          "action": "停用",
+          "note": "传感器漂移"
+        },
+        {
+          "at": "2026-05-20T08:00:00.000Z",
+          "action": "创建",
+          "note": "设备建档"
+        }
+      ]
+    }
+  ],
+  "calibrations": [
+    {
+      "id": "cal-1",
+      "deviceId": "device-1",
+      "deviceCode": "KQ-01",
+      "deviceName": "多参数微环境巡测仪",
+      "certificateNo": "JZ-2026-0117",
+      "agency": "省计量科学研究院",
+      "calibratedAt": "2026-06-01",
+      "validUntil": "2026-12-31",
+      "result": "合格",
+      "note": "",
+      "createdAt": "2026-06-01T09:00:00.000Z",
+      "updatedAt": "2026-06-01T09:00:00.000Z",
+      "history": [
+        {
+          "at": "2026-06-01T09:00:00.000Z",
+          "action": "创建",
+          "note": "校准登记"
+        }
+      ]
+    },
+    {
+      "id": "cal-2",
+      "deviceId": "device-2",
+      "deviceCode": "KQ-02",
+      "deviceName": "多参数微环境巡测仪",
+      "certificateNo": "JZ-2025-0988",
+      "agency": "省计量科学研究院",
+      "calibratedAt": "2025-09-15",
+      "validUntil": "2026-03-15",
+      "result": "合格",
+      "note": "已过期，待送检",
+      "createdAt": "2025-09-15T09:00:00.000Z",
+      "updatedAt": "2025-09-15T09:00:00.000Z",
+      "history": [
+        {
+          "at": "2025-09-15T09:00:00.000Z",
+          "action": "创建",
+          "note": "校准登记"
+        }
+      ]
+    },
+    {
+      "id": "cal-3",
+      "deviceId": "device-3",
+      "deviceCode": "KQ-03",
+      "deviceName": "老式CO2巡测仪",
+      "certificateNo": "JZ-2026-0201",
+      "agency": "省计量科学研究院",
+      "calibratedAt": "2026-05-10",
+      "validUntil": "2026-11-10",
+      "result": "不合格",
+      "note": "示值误差超限",
+      "createdAt": "2026-05-10T09:00:00.000Z",
+      "updatedAt": "2026-05-10T09:00:00.000Z",
+      "history": [
+        {
+          "at": "2026-05-10T09:00:00.000Z",
+          "action": "创建",
+          "note": "校准登记"
+        }
       ]
     }
   ],
@@ -23,6 +177,8 @@
     {
       "id": "survey-seed-1",
       "siteId": "site-seed-1",
+      "deviceId": "device-1",
+      "calibrationId": "cal-1",
       "surveyor": "沈宁",
       "date": "2026-06-18",
       "temperature": 17.4,
@@ -32,11 +188,16 @@
       "disturbance": "栏杆外侧有触碰痕迹",
       "photoUrl": "",
       "status": "异常待复查",
+      "holdReason": "",
       "reviewNote": "",
       "createdAt": "2026-06-18T10:00:00.000Z",
       "updatedAt": "2026-06-18T10:00:00.000Z",
       "history": [
-        { "at": "2026-06-18T10:00:00.000Z", "action": "创建", "note": "CO2升高并有干扰痕迹" }
+        {
+          "at": "2026-06-18T10:00:00.000Z",
+          "action": "创建",
+          "note": "CO2升高并有干扰痕迹"
+        }
       ]
     }
   ]
