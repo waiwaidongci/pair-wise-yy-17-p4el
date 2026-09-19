@@ -19,10 +19,77 @@
       ]
     }
   ],
+  "devices": [
+    {
+      "id": "device-seed-1",
+      "code": "TH-101",
+      "model": "温湿记录仪 X2",
+      "rangeMin": -10,
+      "rangeMax": 50,
+      "status": "在用",
+      "assignedTo": "沈宁",
+      "assignedAt": "2026-06-18T08:30:00.000Z",
+      "note": "西线巡测常用机",
+      "createdAt": "2026-06-10T08:00:00.000Z",
+      "updatedAt": "2026-06-18T08:30:00.000Z",
+      "history": [
+        { "at": "2026-06-18T08:30:00.000Z", "action": "分配设备", "note": "领用人：沈宁" },
+        { "at": "2026-06-10T08:00:00.000Z", "action": "创建", "note": "设备建档" }
+      ]
+    },
+    {
+      "id": "device-seed-2",
+      "code": "TH-102",
+      "model": "温湿记录仪 X1",
+      "rangeMin": 0,
+      "rangeMax": 40,
+      "status": "在用",
+      "assignedTo": "",
+      "assignedAt": "",
+      "note": "备用机，校准已过期待送检",
+      "createdAt": "2026-06-10T08:00:00.000Z",
+      "updatedAt": "2026-06-10T08:00:00.000Z",
+      "history": [
+        { "at": "2026-06-10T08:00:00.000Z", "action": "创建", "note": "设备建档" }
+      ]
+    }
+  ],
+  "calibrations": [
+    {
+      "id": "cal-seed-1",
+      "deviceId": "device-seed-1",
+      "calibratedAt": "2026-06-01",
+      "validUntil": "2026-12-31",
+      "result": "合格",
+      "agency": "省计量科学研究院",
+      "note": "周期校准",
+      "createdAt": "2026-06-01T09:00:00.000Z",
+      "updatedAt": "2026-06-01T09:00:00.000Z",
+      "history": [
+        { "at": "2026-06-01T09:00:00.000Z", "action": "创建", "note": "周期校准" }
+      ]
+    },
+    {
+      "id": "cal-seed-2",
+      "deviceId": "device-seed-2",
+      "calibratedAt": "2025-12-01",
+      "validUntil": "2026-06-01",
+      "result": "合格",
+      "agency": "省计量科学研究院",
+      "note": "已过期，待送检",
+      "createdAt": "2025-12-01T09:00:00.000Z",
+      "updatedAt": "2025-12-01T09:00:00.000Z",
+      "history": [
+        { "at": "2025-12-01T09:00:00.000Z", "action": "创建", "note": "周期校准" }
+      ]
+    }
+  ],
   "surveys": [
     {
       "id": "survey-seed-1",
       "siteId": "site-seed-1",
+      "deviceId": "device-seed-1",
+      "calibrationId": "cal-seed-1",
       "surveyor": "沈宁",
       "date": "2026-06-18",
       "temperature": 17.4,
@@ -33,6 +100,10 @@
       "photoUrl": "",
       "status": "异常待复查",
       "reviewNote": "",
+      "admission": "有效",
+      "admissionReason": "",
+      "invalid": false,
+      "submissionKey": "seed-survey-1",
       "createdAt": "2026-06-18T10:00:00.000Z",
       "updatedAt": "2026-06-18T10:00:00.000Z",
       "history": [
